@@ -1,10 +1,17 @@
-const engineeringFacts = [
-    "The term 'engineer' is derived from the Latin words 'ingenium' and 'ingeniare', which mean 'cleverness' and 'to contrive or devise'.",
-    "The Great Pyramid of Giza, one of the Seven Wonders of the Ancient World, was built by engineers.",
-    "The world's first computer programmer was Ada Lovelace, who wrote algorithms for Charles Babbage's early mechanical general-purpose computer, the Analytical Engine.",
-    "The Eiffel Tower in Paris was designed by Gustave Eiffel's engineering company for the 1889 Paris World's Fair.",
-    // Add more facts here
+const facts = [
+    "The Eiffel Tower can be 15 cm taller during the summer.",
+    "Cows have best friends and can become stressed when they are separated.",
+    "The first oranges weren’t orange.",
+    "Octopuses have three hearts.",
+    "Bananas are berries, but strawberries aren't.",
+    "The shortest war in history lasted 38 minutes.",
+    "Honey never spoils."
 ];
 
-// Export the engineeringFacts array to make it accessible in other files if needed
-export default engineeringFacts;
+const factDisplay = document.getElementById('factDisplay');
+const factButton = document.getElementById('factButton');
+
+factButton.addEventListener('click', function() {
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    factDisplay.textContent = randomFact;
+});
