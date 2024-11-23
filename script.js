@@ -1,24 +1,28 @@
 const facts = [
-  "The first computer programmer was Ada Lovelace, a mathematician in the 1800s.",
-  "The term 'engineer' comes from the Latin word 'ingenium,' which means 'cleverness.'",
-  "The Eiffel Tower was initially considered an eyesore by many when it was built.",
-  "The Great Wall of China is not visible from space with the naked eye.",
-  "The tallest building in the world, the Burj Khalifa, is 828 meters tall.",
-  "The first recorded use of concrete was in Ancient Rome."
+    "The Eiffel Tower can be 15 cm taller during summer due to thermal expansion.",
+    "The first computer programmer was Ada Lovelace in the 1840s.",
+    "The Great Pyramid of Giza is the only one of the Seven Wonders of the Ancient World still standing.",
+    "A Boeing 747 is made up of six million parts.",
+    "The word 'engineer' is derived from the Latin words 'ingenium' (cleverness) and 'ingeniare' (to devise).",
+    "The longest bridge in the world is the Danyang–Kunshan Grand Bridge in China, measuring over 164 kilometers.",
+    "Leonardo da Vinci conceptualized the helicopter and other engineering marvels centuries before they were built."
 ];
 
-const factTextElement = document.getElementById('fact-text');
-const generateBtn = document.getElementById('generate-btn');
+const button = document.getElementById("fact-button");
+const factContainer = document.getElementById("fact-container");
+const factDisplay = document.getElementById("fact-display");
 
-// Function to generate a random fun fact
-function generateFact() {
-  const randomFact = facts[Math.floor(Math.random() * facts.length)];
-  gsap.fromTo(factTextElement, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 1 });
-  factTextElement.textContent = randomFact;
-}
+button.addEventListener("click", () => {
+    // Trigger fact change with animation
+    factContainer.style.opacity = 0;
+    factContainer.style.transform = "translateY(20px)";
 
-generateBtn.addEventListener('click', generateFact);
+    setTimeout(() => {
+        const randomFact = facts[Math.floor(Math.random() * facts.length)];
+        factDisplay.textContent = randomFact;
 
-// Initial Animation on Page Load
-gsap.from('header h1', { opacity: 0, y: -100, duration: 1, ease: 'power4.out' });
-gsap.from('#fact-box', { opacity: 0, y: 50, duration: 1.2, delay: 0.5, ease: 'power4.out' });
+        // Bring the fact back with animation
+        factContainer.style.opacity = 1;
+        factContainer.style.transform = "translateY(0)";
+    }, 500);
+});
