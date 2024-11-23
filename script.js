@@ -9,9 +9,15 @@ const facts = [
 ];
 
 const factDisplay = document.getElementById('factDisplay');
-const factButton = document.getElementById('factButton');
+let factIndex = 0;
 
-factButton.addEventListener('click', function() {
-    const randomFact = facts[Math.floor(Math.random() * facts.length)];
-    factDisplay.textContent = randomFact;
-});
+function displayFact() {
+    factDisplay.textContent = facts[factIndex];
+    factIndex = (factIndex + 1) % facts.length;
+}
+
+// Display the first fact immediately
+displayFact();
+
+// Set an interval to display facts automatically every few seconds
+setInterval(displayFact, 5000); // Change the interval duration as needed
