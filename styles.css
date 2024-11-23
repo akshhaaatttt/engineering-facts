@@ -1,61 +1,74 @@
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
-  color: #333;
+  font-family: 'Press Start 2P', Courier, monospace; /* Retro pixel font */
+  background: linear-gradient(135deg, #ff007f, #00bfff, #ff8c00); /* Retro gradient background */
+  color: white;
   text-align: center;
-  padding: 20px;
+  padding: 0;
   margin: 0;
-  overflow-x: hidden;
-  animation: fadeInPage 2s ease-in;
+  height: 100vh;
+  background-size: cover;
+  animation: backgroundAnimation 3s ease infinite;
 }
 
+@keyframes backgroundAnimation {
+  0% { background-position: 0 0; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0 0; }
+}
+
+/* Header Styles */
 header h1 {
-  color: #4CAF50;
+  color: #ffcc00; /* Neon Yellow */
+  font-size: 3rem;
+  text-shadow: 3px 3px 5px rgba(255, 0, 255, 0.7), 0 0 25px rgba(0, 255, 255, 0.6);
+  margin-top: 50px;
   animation: fadeIn 2s ease-in;
 }
 
+/* Fun Fact Container Styles */
 #fact-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 30px;
+  border-radius: 10px;
   margin: 20px auto;
   max-width: 600px;
   opacity: 0;
   transform: translateY(30px);
-  animation: slideUp 1s forwards;
+  animation: slideUp 1s forwards, fadeIn 1s ease-in forwards;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic-2x.png'); /* Optional: Grid Pattern */
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
 }
 
+/* Button Styles */
 button {
-  padding: 10px 20px;
+  padding: 15px 30px;
   font-size: 18px;
-  background-color: #4CAF50;
+  background-color: #ff007f; /* Neon Pink */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 button:hover {
-  background-color: #45a049;
-  animation: bounce 0.5s;
+  background-color: #ffcc00; /* Neon Yellow */
+  transform: scale(1.1);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
+/* Footer Styles */
 footer {
   margin-top: 40px;
   font-size: 14px;
   opacity: 0;
   animation: fadeIn 3s ease-in 1s forwards;
-}
-
-@keyframes fadeInPage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes fadeIn {
@@ -78,10 +91,21 @@ footer {
   }
 }
 
-@keyframes bounce {
-  0% { transform: scale(1); }
-  30% { transform: scale(1.1); }
-  50% { transform: scale(0.9); }
-  70% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+/* Neon Hover Effect on Button */
+button:hover {
+  background-color: #ffcc00;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Adding a grid background for retro style */
+#fact-container {
+  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic-2x.png'); /* Optional: Grid Pattern */
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+}
+
+/* Make text bold for that retro look */
+p, h1 {
+  font-weight: bold;
 }
