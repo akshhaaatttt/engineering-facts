@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fun Facts Page</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Fun Facts Generator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-<h1>Fun Facts</h1>
-<p id="fact"></p>
-<button onclick="showFact()">Show Fact</button>
-</div>
-<script src="script.js"></script>
+  <header>
+    <h1>Random Engineering Fun Facts</h1>
+  </header>
+
+  <main>
+    <div id="fact-container">
+      <p id="fact">Click below to generate a fun engineering fact!</p>
+    </div>
+    <button id="generate-button">Generate a Fun Fact!</button>
+  </main>
+
+  <footer>
+    <p>Fun facts powered by engineering knowledge.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
