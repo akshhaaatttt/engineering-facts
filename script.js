@@ -1,23 +1,17 @@
 const facts = [
+    "A single cloud can weight more than 1 million pounds.",
     "The Eiffel Tower can be 15 cm taller during the summer.",
-    "Cows have best friends and can become stressed when they are separated.",
+    "The average person walks the equivalent of three times around the world in a lifetime.",
+    "Cows moo in accents specific to their region.",
     "The first oranges weren’t orange.",
     "Octopuses have three hearts.",
     "Bananas are berries, but strawberries aren't.",
-    "The shortest war in history lasted 38 minutes.",
-    "Honey never spoils."
+    "Honey never spoils.",
+    "The unicorn is the national animal of Scotland.",
+    "The shortest war in history lasted only 38 minutes."
 ];
 
-const factDisplay = document.getElementById('factDisplay');
-let factIndex = 0;
-
-function displayFact() {
-    factDisplay.textContent = facts[factIndex];
-    factIndex = (factIndex + 1) % facts.length;
+function showFact() {
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    document.getElementById('fact').innerText = randomFact;
 }
-
-// Display the first fact immediately
-displayFact();
-
-// Set an interval to display facts automatically every few seconds
-setInterval(displayFact, 5000); // Change the interval duration as needed
